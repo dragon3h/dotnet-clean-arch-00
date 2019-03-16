@@ -23,11 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanApp.Application", "Cle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanApp.Infrastructure", "CleanApp.Infrastructure\CleanApp.Infrastructure.csproj", "{44F40797-6FCF-4280-99C6-E084A459284C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanApp.Persistance", "CleanApp.Persistance\CleanApp.Persistance.csproj", "{0D24ADA8-FF22-4D71-9FF6-E0D809089EF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanApp.Persistence", "CleanApp.Persistance\CleanApp.Persistence.csproj", "{0D24ADA8-FF22-4D71-9FF6-E0D809089EF4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanApp.Common", "CleanApp.Common\CleanApp.Common.csproj", "{1FA25FF6-4E8C-48E3-8077-318535E82B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanApp.WebAPI", "CleanApp.WebAPI\CleanApp.WebAPI.csproj", "{A9DC4A86-D4A2-4701-9ACA-BD934A6CEDBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanApp.WebAPI", "CleanApp.WebAPI\CleanApp.WebAPI.csproj", "{A9DC4A86-D4A2-4701-9ACA-BD934A6CEDBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

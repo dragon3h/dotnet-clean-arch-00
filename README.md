@@ -10,4 +10,7 @@
    Presentation: 1) create dotnet core WEB API project
    Tests
 
-3.
+3. BE:
+   a) in Domain project create Models
+   b) in Infrastructure -> Persistance project add EntityFramework and neccessary tools
+   c) in Infrastructure -> Persistance project create DbContext and configure it in Startup.cs
