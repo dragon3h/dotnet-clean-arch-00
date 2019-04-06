@@ -18,3 +18,4 @@
    e) add connection string in Presentation -> WebAPI appsettings.json
    f) add DbSet(s) to CleanAppDbContext
    g) create initial migration
+   h) create database (update database)
