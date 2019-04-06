@@ -13,4 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanApp.Domain\CleanApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
