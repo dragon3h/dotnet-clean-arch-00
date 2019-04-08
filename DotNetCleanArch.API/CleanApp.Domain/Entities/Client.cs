@@ -12,5 +12,7 @@ namespace CleanApp.Domain.Entities
         public int AddressId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+
+        public Address Address { get; set; }
     }
 }

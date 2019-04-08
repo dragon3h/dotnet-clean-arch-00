@@ -11,5 +11,7 @@ namespace CleanApp.Domain.Entities
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 
+        public Make Make { get; set; }
+
     }
 }
