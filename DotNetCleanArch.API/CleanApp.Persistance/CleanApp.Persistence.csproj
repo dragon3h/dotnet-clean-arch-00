@@ -5,6 +5,47 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190406103038_InitialModel.cs" />
+    <Compile Remove="Migrations\20190406103038_InitialModel.Designer.cs" />
+    <Compile Remove="Migrations\20190408001407_AddFluentAPIForAddressAndClient.cs" />
+    <Compile Remove="Migrations\20190408001407_AddFluentAPIForAddressAndClient.Designer.cs" />
+    <Compile Remove="Migrations\20190409231634_FluentAPIAdded.cs" />
+    <Compile Remove="Migrations\20190409231634_FluentAPIAdded.Designer.cs" />
+    <Compile Remove="Migrations\20190409232300_FluentAPIAddedShort.cs" />
+    <Compile Remove="Migrations\20190409232300_FluentAPIAddedShort.Designer.cs" />
+    <Compile Remove="Migrations\20190409232452_ChangeShort.cs" />
+    <Compile Remove="Migrations\20190409232452_ChangeShort.Designer.cs" />
+    <Compile Remove="Migrations\20190409233002_ChangeDefaultValue.cs" />
+    <Compile Remove="Migrations\20190409233002_ChangeDefaultValue.Designer.cs" />
+    <Compile Remove="Migrations\20190409233420_ChangeDefaultValue1.cs" />
+    <Compile Remove="Migrations\20190409233420_ChangeDefaultValue1.Designer.cs" />
+    <Compile Remove="Migrations\20190409234419_ChangeDefaultValue2.cs" />
+    <Compile Remove="Migrations\20190409234419_ChangeDefaultValue2.Designer.cs" />
+    <Compile Remove="Migrations\20190409235307_FixFluentAPI.cs" />
+    <Compile Remove="Migrations\20190409235307_FixFluentAPI.Designer.cs" />
+    <Compile Remove="Migrations\20190410000132_FixFluentAPIDefault.cs" />
+    <Compile Remove="Migrations\20190410000132_FixFluentAPIDefault.Designer.cs" />
+    <Compile Remove="Migrations\20190410000906_InitialModel02.cs" />
+    <Compile Remove="Migrations\20190410000906_InitialModel02.Designer.cs" />
+    <Compile Remove="Migrations\20190410001422_InitialModel03.cs" />
+    <Compile Remove="Migrations\20190410001422_InitialModel03.Designer.cs" />
+    <Compile Remove="Migrations\20190410001538_InitialModel04.cs" />
+    <Compile Remove="Migrations\20190410001538_InitialModel04.Designer.cs" />
+    <Compile Remove="Migrations\20190410001651_InitialModel05.cs" />
+    <Compile Remove="Migrations\20190410001651_InitialModel05.Designer.cs" />
+    <Compile Remove="Migrations\20190410001720_InitialModel06.cs" />
+    <Compile Remove="Migrations\20190410001720_InitialModel06.Designer.cs" />
+    <Compile Remove="Migrations\20190410002002_InitialModel07.cs" />
+    <Compile Remove="Migrations\20190410002002_InitialModel07.Designer.cs" />
+    <Compile Remove="Migrations\20190410002116_InitialModel08.cs" />
+    <Compile Remove="Migrations\20190410002116_InitialModel08.Designer.cs" />
+    <Compile Remove="Migrations\20190410003328_InitialModel11.cs" />
+    <Compile Remove="Migrations\20190410003328_InitialModel11.Designer.cs" />
+    <Compile Remove="Migrations\20190410003825_InitialModel12.cs" />
+    <Compile Remove="Migrations\20190410003825_InitialModel12.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.3">

@@ -19,6 +19,7 @@ namespace CleanApp.Domain.Entities
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 
+        public Address Address { get; set; }
         public ICollection<Mascot> Mascots { get; private set; }
     }
 }

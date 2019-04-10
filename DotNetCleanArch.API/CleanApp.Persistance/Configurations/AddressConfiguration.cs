@@ -9,7 +9,6 @@ namespace CleanApp.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Address> builder)
         {
             builder.HasKey(e => e.Id);
-            builder.Property(e => e.Id).HasColumnName("AddressID");
             builder.Property(e => e.City).HasMaxLength(50);
             builder.Property(e => e.Country).HasMaxLength(100);
             builder.Property(e => e.CreatedDate).HasColumnType("datetime");

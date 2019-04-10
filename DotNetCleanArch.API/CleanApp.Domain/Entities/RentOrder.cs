@@ -18,6 +18,7 @@ namespace CleanApp.Domain.Entities
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 
+        public Client Client { get; set; }
         public ICollection<RentOrderDetails> RentOrderDetails { get; private set; }
     }
 }

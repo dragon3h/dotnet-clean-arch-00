@@ -11,6 +11,7 @@ namespace CleanApp.Domain.Entities
         }
 
         public int Id { get; set; }
+        public string Shipper { get; set; }
         public decimal ShippingPrice { get; set; }
         public DateTime PaymentDate { get; set; }
         public DateTime ShippingDate { get; set; }

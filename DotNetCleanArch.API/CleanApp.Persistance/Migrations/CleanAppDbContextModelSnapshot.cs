@@ -23,7 +23,6 @@ namespace CleanApp.Persistence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("AddressID")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("City")
@@ -58,15 +57,23 @@ namespace CleanApp.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("CreatedDate");
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<DateTime>("PaymentDate");
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<DateTime>("ShippingDate");
+                    b.Property<string>("Shipper")
+                        .HasMaxLength(100);
 
-                    b.Property<decimal>("ShippingPrice");
+                    b.Property<DateTime>("ShippingDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("UpdatedDate");
+                    b.Property<decimal>("ShippingPrice")
+                        .HasColumnType("money");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
 
@@ -81,11 +88,20 @@ namespace CleanApp.Persistence.Migrations
 
                     b.Property<int>("BuyOrderId");
 
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
+
                     b.Property<int>("MascotId");
 
-                    b.Property<short>("Quantity");
+                    b.Property<int>("Quantity")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("((1))");
 
-                    b.Property<decimal>("UnitPrice");
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("money");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
 
@@ -110,7 +126,6 @@ namespace CleanApp.Persistence.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasMaxLength(100);
 
                     b.Property<string>("LastName")
@@ -140,19 +155,27 @@ namespace CleanApp.Persistence.Migrations
 
                     b.Property<int>("AddressId");
 
-                    b.Property<string>("Code");
+                    b.Property<string>("Code")
+                        .HasMaxLength(20);
 
-                    b.Property<DateTime?>("CreatedDate");
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasMaxLength(200);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Phone");
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20);
 
-                    b.Property<DateTime?>("UpdatedDate");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
 
                     b.ToTable("Makes");
                 });
@@ -163,15 +186,19 @@ namespace CleanApp.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Code");
+                    b.Property<string>("Code")
+                        .HasMaxLength(20);
 
-                    b.Property<DateTime?>("CreatedDate");
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("MakeId");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(100);
 
-                    b.Property<DateTime?>("UpdatedDate");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
 
@@ -188,19 +215,27 @@ namespace CleanApp.Persistence.Migrations
 
                     b.Property<int>("ClientId");
 
-                    b.Property<DateTime?>("CreatedDate");
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<DateTime>("FromDate");
+                    b.Property<DateTime>("FromDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<DateTime>("PaymentDate");
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<decimal>("ShippingPrice");
+                    b.Property<decimal>("ShippingPrice")
+                        .HasColumnType("money");
 
-                    b.Property<DateTime>("ToDate");
+                    b.Property<DateTime>("ToDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("UpdatedDate");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
 
                     b.ToTable("RentOrders");
                 });
@@ -211,17 +246,29 @@ namespace CleanApp.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Deposit");
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
 
-                    b.Property<float>("Discount");
+                    b.Property<decimal>("Deposit")
+                        .HasColumnType("money");
+
+                    b.Property<decimal>("Discount")
+                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
+                        .HasColumnType("money");
 
                     b.Property<int>("MascotId");
 
-                    b.Property<short>("Quantity");
+                    b.Property<int>("Quantity")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("((1))");
 
                     b.Property<int>("RentOrderId");
 
-                    b.Property<decimal>("UnitPrice");
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("money");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
 
@@ -237,12 +284,12 @@ namespace CleanApp.Persistence.Migrations
                     b.HasOne("CleanApp.Domain.Entities.BuyOrder", "BuyOrder")
                         .WithMany("BuyOrderDetails")
                         .HasForeignKey("BuyOrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasConstraintName("FK_BuyOrderDetails_BuyOrder");
 
                     b.HasOne("CleanApp.Domain.Entities.Mascot", "Mascot")
-                        .WithMany()
+                        .WithMany("BuyOrderDetails")
                         .HasForeignKey("MascotId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasConstraintName("FK_BuyOrderDetails_Mascot");
                 });
 
             modelBuilder.Entity("CleanApp.Domain.Entities.Client", b =>
@@ -250,8 +297,15 @@ namespace CleanApp.Persistence.Migrations
                     b.HasOne("CleanApp.Domain.Entities.Address", "Address")
                         .WithMany("Clients")
                         .HasForeignKey("AddressId")
-                        .HasConstraintName("FK_Clients_Address")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasConstraintName("FK_Clients_Address");
+                });
+
+            modelBuilder.Entity("CleanApp.Domain.Entities.Make", b =>
+                {
+                    b.HasOne("CleanApp.Domain.Entities.Address", "Address")
+                        .WithMany("Makes")
+                        .HasForeignKey("AddressId")
+                        .HasConstraintName("FK_Makes_Addresses");
                 });
 
             modelBuilder.Entity("CleanApp.Domain.Entities.Mascot", b =>
@@ -259,20 +313,28 @@ namespace CleanApp.Persistence.Migrations
                     b.HasOne("CleanApp.Domain.Entities.Make", "Make")
                         .WithMany("Mascots")
                         .HasForeignKey("MakeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasConstraintName("FK_Mascots_Make");
+                });
+
+            modelBuilder.Entity("CleanApp.Domain.Entities.RentOrder", b =>
+                {
+                    b.HasOne("CleanApp.Domain.Entities.Client", "Client")
+                        .WithMany("RentOrders")
+                        .HasForeignKey("ClientId")
+                        .HasConstraintName("FK_RentOrders_Clients");
                 });
 
             modelBuilder.Entity("CleanApp.Domain.Entities.RentOrderDetails", b =>
                 {
                     b.HasOne("CleanApp.Domain.Entities.Mascot", "Mascot")
-                        .WithMany()
+                        .WithMany("RentOrderDetails")
                         .HasForeignKey("MascotId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasConstraintName("FK_RentOrderDetails_Mascot");
 
                     b.HasOne("CleanApp.Domain.Entities.RentOrder", "RentOrder")
                         .WithMany("RentOrderDetails")
                         .HasForeignKey("RentOrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasConstraintName("FK_RentOrderDetails_RentOrder");
                 });
 #pragma warning restore 612, 618
         }

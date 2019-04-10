@@ -11,11 +11,12 @@
    Tests
 
 3. BE:
-   a) in Domain project create Models
-   b) in Infrastructure -> Persistance project add EntityFramework and neccessary tools
-   c) in Infrastructure -> Persistance project create DbContext
-   d) configure SQL Server Provider in Presentation -> WebAPI in file Startup.cs
-   e) add connection string in Presentation -> WebAPI appsettings.json
-   f) add DbSet(s) to CleanAppDbContext
-   g) create initial migration
-   h) create database (update database)
+   1. in Domain project create Models
+   2. in Infrastructure -> Persistance project add EntityFramework and neccessary tools
+   3. in Infrastructure -> Persistance project create DbContext
+   4. configure SQL Server Provider in Presentation -> WebAPI in file Startup.cs
+   5. add connection string in Presentation -> WebAPI appsettings.json
+   6. add DbSet(s) to CleanAppDbContext
+   7. create initial migration
+   8. create database (update database)
+   9. create configurations with Fluent API

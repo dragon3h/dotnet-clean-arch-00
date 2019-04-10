@@ -9,6 +9,7 @@ namespace CleanApp.Domain.Entities
         public Address()
         {
             Clients = new HashSet<Client>();
+            Makes = new HashSet<Make>();
         }
 
         public int Id { get; set; }
@@ -21,5 +22,6 @@ namespace CleanApp.Domain.Entities
         public DateTime? UpdatedDate { get; set; }
 
         public ICollection<Client> Clients { get; private set; }
+        public ICollection<Make> Makes { get; private set; }
     }
 }
