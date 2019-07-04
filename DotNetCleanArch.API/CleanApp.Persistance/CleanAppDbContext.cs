@@ -17,6 +17,7 @@ namespace CleanApp.Persistence
         public DbSet<Mascot> Mascots { get; set; }
         public DbSet<RentOrder> RentOrders{ get; set; }
         public DbSet<RentOrderDetails> RentOrderDetails { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
