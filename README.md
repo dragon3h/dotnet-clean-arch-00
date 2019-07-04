@@ -21,3 +21,4 @@
    8. create database (update database)
    9. create configurations with Fluent API
    10. initial setup UI project: Vuejs
+   11. add Vuetify

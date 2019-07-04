@@ -7,7 +7,7 @@ import { LinkContainer } from "react-router-bootstrap";
 const navigation = props => {
   return (
     <Col md={12}>
-      <Navbar bg="dark" inverse collapseOnSelect>
+      <Navbar bg="dark" inverse="true" collapseOnSelect>
         <Navbar.Brand>
           <NavLink to={"/"} exact>
             Account-Owner
@@ -17,10 +17,10 @@ const navigation = props => {
         <Navbar.Collapse>
           <Nav>
             <LinkContainer to={"/owner-list"} exact>
-              <NavItem eventKey={1}>Owner Actions</NavItem>
+              <NavItem eventkey={1}>Owner Actions</NavItem>
             </LinkContainer>
             <LinkContainer to={"/account-list"}>
-              <NavItem eventKey={2}>Account Actions</NavItem>
+              <NavItem eventkey={2}>Account Actions</NavItem>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
